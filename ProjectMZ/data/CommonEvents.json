@@ -1,0 +1,7 @@
+[
+null,
+{"id":1,"list":[{"code":101,"indent":0,"parameters":["Monster",1,0,2,"リストラされたスライム"]},{"code":401,"indent":0,"parameters":["「どうも、MZでリストラされたスライムです。"]},{"code":101,"indent":0,"parameters":["Monster",5,0,2,"リストラされたスケルトン"]},{"code":401,"indent":0,"parameters":["「同じく、リストラされたスケルトンです。"]},{"code":301,"indent":0,"parameters":[0,6,true,true]},{"code":601,"indent":0,"parameters":[]},{"code":0,"indent":1,"parameters":[]},{"code":602,"indent":0,"parameters":[]},{"code":0,"indent":1,"parameters":[]},{"code":603,"indent":0,"parameters":[]},{"code":0,"indent":1,"parameters":[]},{"code":604,"indent":0,"parameters":[]},{"code":0,"indent":0,"parameters":[]}],"name":"スライムとスケルトン","switchId":1,"trigger":0},
+{"id":2,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":3,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":4,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0}
+]
