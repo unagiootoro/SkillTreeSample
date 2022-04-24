@@ -1,6 +1,6 @@
 /*:
 @target MV MZ
-@plugindesc スキルツリーコンフィグ
+@plugindesc スキルツリーコンフィグ v1.0.0
 @author うなぎおおとろ
 @url https://raw.githubusercontent.com/unagiootoro/RPGMZ/master/SkillTreeConfig.js
 
