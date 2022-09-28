@@ -1,6 +1,6 @@
 /*:
 @target MV MZ
-@plugindesc Skill tree v1.8.0
+@plugindesc Skill tree v1.8.2
 @author unagi ootoro
 @url https://raw.githubusercontent.com/unagiootoro/RPGMZ/master/SkillTree.js
 
@@ -201,7 +201,7 @@ This plugin is available under the terms of the MIT license.
 
 /*:ja
 @target MV MZ
-@plugindesc スキルツリー v1.8.0
+@plugindesc スキルツリー v1.8.2
 @author うなぎおおとろ
 @url https://raw.githubusercontent.com/unagiootoro/RPGMZ/master/SkillTree.js
 
@@ -273,7 +273,7 @@ trueを設定すると、RPGツクールMZのレイアウト形式に合わせ�
 
 @param ViewLineWidth
 @type number
-@default 3
+@default 2
 @desc
 ラインの幅を指定します。
 
@@ -2279,20 +2279,24 @@ class SkillTreeView {
         maxPy += (IconHeight + IconSpaceHeight);
         let viewX, viewY;
 
-        if (selectNodePx < this._windowWidth / 2) {
+        // ノードの中央を中心にビューを表示する。
+        const selectNodeCx = selectNodePx + IconWidth / 2;
+        const selectNodeCy = selectNodePy + IconHeight / 2;
+
+        if (selectNodeCx < this._windowWidth / 2) {
             viewX = 0;
-        } else if (maxPx - selectNodePx < this._windowWidth / 2) {
+        } else if (maxPx - selectNodeCx < this._windowWidth / 2) {
             viewX = maxPx - (this._windowWidth - ViewBeginXOffset);
         } else {
-            viewX = Math.floor(selectNodePx - this._windowWidth / 2);
+            viewX = Math.floor(selectNodeCx - this._windowWidth / 2);
         }
 
-        if (selectNodePy < this._windowHeight / 2) {
+        if (selectNodeCy < this._windowHeight / 2) {
             viewY = 0;
-        } else if (maxPy - selectNodePy < this._windowHeight / 2) {
+        } else if (maxPy - selectNodeCy < this._windowHeight / 2) {
             viewY = maxPy - (this._windowHeight - ViewBeginYOffset);
         } else {
-            viewY = Math.floor(selectNodePy - this._windowHeight / 2);
+            viewY = Math.floor(selectNodeCy - this._windowHeight / 2);
         }
 
         if (viewX < 0) viewX = 0;
@@ -2309,7 +2313,6 @@ class SkillTreeView {
             } else {
                 this.drawIcon(bitmap, node.iconBitmap(), px, py, 96);
             }
-            this.drawNode(bitmap, node, px, py);
             if (node.isOpened()) {
                 const x = px - ViewRectOfs;
                 const y = py - ViewRectOfs;
